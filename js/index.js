@@ -38,5 +38,66 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+
+// Images
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let ctaImg = document.getElementById("cta-img")
+ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
+
+let middleImg = document.getElementById("middle-img")
+middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+// Header
+
+let anchors = document.querySelectorAll("nav a");
+anchors.forEach(
+  (el, index) => (el.textContent = siteContent["nav"][`nav-item-${index + 1}`])
+);
+
+
+// CTA
+
+const ctaButton = document.querySelector(".cta .cta-text button")
+ctaButton.textContent = 'Get Started';
+
+const ctaButtonText = document.querySelector(".cta-text h1")
+ctaButtonText.innerHTML = 'Dom <br> Is <br> Awesome';
+
+
+// Main Content Top
+
+
+
+const textHeading = document.querySelectorAll('.main-content h4');
+textHeading[0].textContent = siteContent["main-content"]["features-h4"];
+textHeading[1].textContent = siteContent['main-content']['about-h4'];
+textHeading[2].textContent = siteContent['main-content']['services-h4'];
+textHeading[3].textContent = siteContent['main-content']['product-h4'];
+textHeading[4].textContent = siteContent['main-content']['vision-h4'];
+
+const textWords = document.querySelectorAll('.main-content p');
+textWords[0].textContent = siteContent["main-content"]['features-content'];
+textWords[1].textContent = siteContent['main-content']['about-content'];
+textWords[2].textContent = siteContent['main-content']['services-content'];
+textWords[3].textContent = siteContent['main-content']['product-content'];
+textWords[4].textContent = siteContent['main-content']['vision-content'];
+
+
+// Contact
+
+const contactHeading = document.querySelector('.contact h4');
+contactHeading.textContent = siteContent['contact']['contact-h4'];
+
+const contactText = document.querySelectorAll('.contact p');
+// contactText[0].textContent = siteContent['contact']['address'];
+const addressText = document.querySelector(".contact p")
+addressText.innerHTML = '123 Way 456 Street<br>Somewhere, USA';
+contactText[1].textContent = siteContent['contact']['phone'];
+contactText[2].textContent = siteContent['contact']['email'];
+
+// Footer
+
+const footerText = document.querySelector("footer p");
+footerText.textContent = siteContent['footer']['copyright'];
